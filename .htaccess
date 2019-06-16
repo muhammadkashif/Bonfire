@@ -1,20 +1,2 @@
-<IfModule mod_rewrite.c>
-
-	# Make sure directory listing is disabled
-	Options +FollowSymLinks -Indexes
-	RewriteEngine on
-	
-	# Send request via index.php (if it's not an existing file/folder)
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME} !-d
-	
-	<IfModule mod_php5.c>
-		RewriteRule ^(.*)$ index.php/$1 [L]
-	</IfModule>
-
-	<IfModule !mod_php5.c>
-		RewriteRule ^(.*)$ index.php?/$1 [L]
-	</IfModule>
-</IfModule>
-	
-	
+# Apache for "Don't look at me."
+Options -Indexes
